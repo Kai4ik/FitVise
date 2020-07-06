@@ -1,0 +1,11 @@
+<div class="grid-container">
+    {{#each meals}}
+  <div class="grid-item">
+      <h3 id="meal_name"> <strong> {{this.name}} </strong> </h3>
+      <p> <img src="/images/{{this.image}}" alt="Logo" width="100" height="100"></p>
+      <p><em> {{this.desc}} </em></p>
+      <p> Price: {{this.price}}</p>
+      <p> Category: {{this.category}}</p>
+  </div> 
+  {{/each}}
+</div>

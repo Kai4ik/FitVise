@@ -1,0 +1,54 @@
+<div class="row"> 
+    <h3>Get food fast &mdash; not fast food</h3>
+    <p class="feat-par"> Hello, we’re FitVise, your new premium food delivery service. We know you’re always busy. 
+        No time for cooking. So let us take care of that, we’re really good at it, we promise!
+    </p>
+</div>
+<div class="grid-container">
+  <div class="grid-item box">
+      <img src="/images/vegetable.png" alt="vegetable" width="50" height="50">
+      <h4> <strong> Up to 365 days/year </strong> </h4>
+      <p> Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. 
+              You can also choose to order more flexibly if that's your style.</p>
+  </div>
+  <div class="grid-item box">
+      <img src="/images/salad.png" alt="fast" width="50" height="50">
+      <h4> <strong> Ready in 20 minutes  </strong>  </h4>
+      <p> You're only twenty minutes away from your delicious and super healthy meals delivered right to your home. We work with the best chefs 
+              in each town to ensure that you're 100% happy.</p>
+  </div>
+  <div class="grid-item box">
+      <img src="/images/gym.png" alt="Organic Food" width="50" height="50">
+      <h4> <strong> 100% organic </strong> </h4>
+      <p> All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics. Good for your health, 
+              the environment, and it also tastes better!</p>
+  </div>
+  <div class="grid-item box">
+      <img src="/images/gym.png" alt="order" width="50" height="50">
+      <h4> <strong> Order anything </strong> </h4>
+      <p> We don't limit your creativity, which means you can order whatever you feel like. You can also choose from our menu containing 
+              over 100 delicious meals. It's up to you!</p>
+  </div>  
+  <br> 
+</div>
+
+<div id="quote">
+    <h2> Eating healthy food fills your body with energy and nutrients. <br> Imagine your cells smiling back at you and saying: “Thank you! </h2>
+    <img src= "/images/fruits.png" alt="Logo" width="65" height="65">
+</div>
+
+<h2 id="topmeal"> Top Trend Packages <img src= "/images/download.png" alt="Logo" width="45" height="45"></h2>
+
+<div class="grid-container">
+    {{#each meals}}
+  <div class="grid-item">
+      <h3> <strong> {{this.name}} </strong> </h3>
+      <p> <img src="/images/{{this.image}}" alt="Logo" width="100" height="100"></p>
+      <p><em> {{this.desc}} </em></p>
+      <p> Price: {{this.price}}</p>
+      <p> Category: {{this.category}}</p>
+  </div> 
+  {{/each}}
+</div>
+
+

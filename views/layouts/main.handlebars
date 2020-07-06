@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+     <link rel="stylesheet" type="text/css" href="/css/styles.css">
+     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+         <nav>
+            <div class="row">
+                <img src="/images/vegetarian.png" alt="Logo" class="logo">
+                <ul class="main-nav">
+                    <li> <a href="/" target="_self"> Home </a></li>
+                    <li> <a href="/top_meals" target="_self"> Meal Packages </a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <h1> FitVise </h1>
+            <h2> Goodbye junk food. <br> Hello super healthy meals </h2>
+
+            <button class="trigger">Sign in</button>
+                <div class="modal">
+                    <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                        <h3 class="login_sign"> Create your account </h3>
+                        <form >
+                            <label for="first">First name:</label><br>
+                            <input type="text" id="first" name="first" value=""><br> <br>
+                            <label for="last">Last Name:</label><br>
+                            <input type="text" id="last" name="last" value=""><br> <br>
+                            <label for="email">Email:</label><br>
+                            <input type="text" id="email" name="email" value=""><br> <br>
+                            <label for="pass">Password:</label><br>
+                            <input type="text" id="pass" name="pass" value=""><br> <br>
+                            <input type="submit" id="submit" value="Register">
+                        </form>
+                    </div>
+                </div>
+                 <button class="trigger1">Log In</button>
+                    <div class="modal1">
+                        <div class="modal-content">
+                         <span class="close-button1">&times;</span>
+                            <h3 class="login_sign"> Welcome! </h3>
+                             <form >
+                                <label for="email">Email:</label><br>
+                                <input type="text" id="email" name="email" value=""><br> <br>
+                                <label for="pass">Password:</label><br>
+                                <input type="text" id="pass" name="pass" value=""><br> <br>
+                                <input type="submit" id="submit" value="Log In">
+                            </form>
+                        </div>
+                    </div>
+            </div>
+    </header>             
+    <main>
+        {{{body}}}
+    </main>
+    <footer>
+        <div id="soc">
+            <p>
+                <img src="/images/instagram-sketched.png" alt="Logo" width="45" height="45"> 
+                <img src="/images/twitter.png" alt="Logo" width="45" height="45">
+            </p>
+            
+        </div>
+    </footer>
+    <script src="/func.js"></script>
+</body>
+</html>
