@@ -1,0 +1,19 @@
+<div class="reg_item">
+    <h3 class="login_sign"> Welcome!  </h3>
+    <form method="POST">
+        <label for="log_email">Email</label><br>
+        <input type="text" id="log_email" name="log_email" value=""><br> <br>
+        <label for="password">Password</label><br>
+        <input type="text" id="password" name="password" value=""><br> <br>
+        <input type="submit" class="submit" value="Sign In">
+        <br>
+        {{#each arr_errors}}
+        <div class="error">
+            {{this}}
+            <br>
+        </div>
+        {{/each}}
+    </form>
+</div> 
+
+    

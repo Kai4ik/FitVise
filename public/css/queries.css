@@ -1,0 +1,82 @@
+@media only screen and (max-width: 1200px) {
+    .hero, .row {
+        width: 100%;
+        padding: 0 10%;
+    }
+
+    .grid-container {
+        grid-template-columns: 50% 50%;
+        margin: 0 6% 8px 6%;
+    }
+
+    .grid-item {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    html {
+        font-size: 16px;
+        font-weight: 200;
+    }
+
+    .hero, .row {
+        width: 100%;
+        padding: 0 10%;
+    }
+
+    .row h3 {
+        font-size: 120%;
+    }
+
+    h4 {
+        font-size: 140%;
+    }
+
+    .box p {
+        font-size: 100%;
+        line-height: 145%;
+    }
+
+    .grid-item {
+        width: 110%;
+    }
+
+    .grid-container {
+        grid-template-columns: 50% 50%;
+        margin: 0 6% 8px 6%;
+    }
+
+    .img {
+        width: 80px;
+        height: 80px;
+    }
+
+    #quote h2 {
+        margin: 0 12% 25px 12%;
+        font-size: 80%;
+    }
+
+    footer {
+        margin-top: 80px;
+    }
+
+    .reg_item {
+        text-align: center;
+        padding: 40px 0 60px 0;
+        font-size: 180%;
+        margin: 2% 15%;
+    }
+       
+    .error {
+        margin-top: 15px;;
+        font-size: 55%;
+        font-family: 'Lekton', sans-serif;
+    }
+    
+    .tip {
+        padding-bottom: 20px;
+        font-size: 55%;
+        margin: 0 30%;
+    }
+}

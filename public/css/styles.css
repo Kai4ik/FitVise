@@ -94,7 +94,10 @@ footer {
 /* -------------------------
    ------- Home Page -------
    ------------------------- */
-
+.img {
+    width: 50px;
+    height: 50px;
+}
 #quote {
     padding: 30px 0;
     background-color: whitesmoke;
@@ -209,66 +212,48 @@ h4 {
    ----- Registration buttons -----
    -------------------------------- */
 
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #FCEDDA;
-    padding: 1rem 1.5rem;
-    width: 24rem;
-    border-radius: 0.5rem;
-    text-align: center;
-}
-
-.modal, .modal1 {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1.1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-}
-
-.show-modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
-
-.close-button, .close-button1 {
-    float: right;
-    width: 1.5rem;
-    line-height: 1.5rem;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    background-color: lightgray;
-}
-
-.close-button:hover {
-    background-color: darkgray;
-}
-
-.trigger, .trigger1 {
-    outline: none;
+.btn:link, .btn:visited {
+    font-size: 130%;
+    font-weight: 800;
     text-decoration: none;
-    display: inline-block;
-    width: 10.5%;
-    margin-right: 0.625%;
-    text-align: center;
-    line-height: 2.3;
+    background-color: #e0e04a;
     color: black;
-  }
+    padding: 12px 16px;
+    border: 1px solid black;
+    border-radius: 30px;
+    transition: background-color 0.5s, font-size 0.5s;
+}
 
-.login_sign {
-    font-size: 25px;
-    color: #EE4E34;
+.btn-hung:link, .btn-hung:visited {
+    margin-right: 10px;
+}
+
+.btn:hover, .btn:active {
+    background-color: #f6f6cc;
+    font-size: 150%;
+}
+
+.reg_item {
+    text-align: center;
+    padding: 40px 0 60px 0;
+    color: black;
     font-family: 'Berkshire Swash', cursive;
+    font-size: 25px;
+    margin: 2% 35%;
+    border: 2px solid black;
+}
+   
+.error {
+    margin-top: 15px;;
+    font-size: 55%;
+    font-family: 'Lekton', sans-serif;
+}
+
+.tip {
+    padding-bottom: 20px;
+    font-size: 45%;
+    font-family: 'Lekton', sans-serif;
+    margin: 0 30%;
 }
 /* ----------------------
    ----------------------
