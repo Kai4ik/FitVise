@@ -63,29 +63,58 @@ exp_app.get("/sign_in", (req, resp)=>{
 
 exp_app.post("/sign_in", (req, resp)=>{
     const error=[];
+    let e_email, e_name, e_lname, e_pass;
     if (req.body.first === "") {
+        e_email = req.body.email;
+        e_name = req.body.first;
+        e_lname = req.body.last;
+        e_pass = req.body.pass;
         error.push("*Field is empty! Please enter first name!");
     }
     if (req.body.last === "") {
+        e_email = req.body.email;
+        e_name = req.body.first;
+        e_lname = req.body.last;
+        e_pass = req.body.pass;
         error.push("*Field is empty! Please enter last name!");
     }
     if (req.body.email === "") {
+        e_email = req.body.email;
+        e_name = req.body.first;
+        e_lname = req.body.last;
+        e_pass = req.body.pass;
         error.push("*Field is empty! Please enter email!");
     }
     if(req.body.pass === "") {
+        e_email = req.body.email;
+        e_name = req.body.first;
+        e_lname = req.body.last;
+        e_pass = req.body.pass;
         error.push("*Field is empty! Please enter a password!");
     }
     let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     if (reg.test(req.body.email) === false) {
+        e_email = req.body.email;
+        e_name = req.body.first;
+        e_lname = req.body.last;
+        e_pass = req.body.pass;
         error.push("*Invalid Email!");
     }
     let password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
     if (password.test(req.body.pass) === false) {
+        e_email = req.body.email;
+        e_name = req.body.first;
+        e_lname = req.body.last;
+        e_pass = req.body.pass;
         error.push("*Invalid Password!");
     }
     if (error.length > 0) {
         resp.render("sign_in",{
             title: "FitVise Home",
+            email_value: e_email,
+            name_value: e_name,
+            lname_value: e_lname,
+            password_value: e_pass,
             arr_error: error, 
         });
     }
