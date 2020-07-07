@@ -4,6 +4,8 @@ const exp_hbs = require("express-handlebars");
 const { static, request, response } = require("express");
 const meals = require("./models/database");
 const bodyParser = require('body-parser');
+require('dotenv').config({path:"./configuration_files/confidential.env"});
+
 
 exp_app.use(express.static("public"));
 
@@ -88,13 +90,13 @@ exp_app.post("/sign_in", (req, resp)=>{
         });
     }
     else {
-        const {fname, lname, email, pass} = req.body;
+        const {first, last, email, pass} = req.body;
         const sgMail = require('@sendgrid/mail');
-        sgMail.setApiKey("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");
+        sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
         const msg = {
             to: `${email}`,
             from: "orozobekov.kai@gmail.com",
-            subject: `Welcome ${fname} ${lname}`,
+            subject: `Welcome ${first} ${last}`,
             html: `We are happy that you joined our big community!`,
         };
         sgMail.send(msg)
@@ -107,6 +109,7 @@ exp_app.post("/sign_in", (req, resp)=>{
     }
 })
 
-exp_app.listen(3000, ()=>{
+const port = process.env.PORT;
+exp_app.listen(port, ()=>{
     console.log("Server is running");
 })
