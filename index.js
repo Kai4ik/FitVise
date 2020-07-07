@@ -36,16 +36,23 @@ exp_app.get("/registration", (req, resp)=>{
 
 exp_app.post("/registration", (req, resp)=>{
     const errors=[];
+    let e_email, e_pass;
     if (req.body.log_email === "") {
+        e_email = req.body.log_email;
+        e_pass = req.body.password;
         errors.push("Field is empty! Please enter email!");
     }
     if(req.body.password === "") {
+        e_email = req.body.log_email;
+        e_pass = req.body.password;
         errors.push("Field is empty! Please enter a password!");
     }
     if (errors.length > 0) {
         result=false;
         resp.render("registration",{
             title: "FitVise Home",
+            email_value: e_email,
+            password_value: e_pass,
             arr_errors: errors
         });
     }
