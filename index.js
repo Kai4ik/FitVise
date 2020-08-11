@@ -1,4 +1,10 @@
 //https://github.com/Kai4ik/FitVise_website
+/*Hi Professor. Thank you for second half of semester, was very gripping to learn new stuff.
+Unfortunately, i was not able to implement shopping cart (actually I used your (exactly the same, because wanted to understand how it works) from last videos, but still do not work appropriately.)
+But I am going to work on that. I had weird error while implementing website on heroku telling about not being able to install "bcrypt"
+dependency. 
+https://www.flaticon.com/ - website where icons were taken
+*/
 
 const express = require("express");
 const exp_hbs = require("express-handlebars");
