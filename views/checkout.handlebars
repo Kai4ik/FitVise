@@ -1,0 +1,88 @@
+    <div class="shcart">
+    <h2> Your Cart {{data.total}}</h2>
+    <h2> Total: {{data.total}}</h2>
+        <div id="list">
+        {{#each data.cart}}
+            <div class="cart_box">
+               <img class="img-fluid" src="images/{{image}}" alt="{{name}}">
+                <h3>{{name}}</h3>
+                <h4>${{price}}</h4>
+                <!--Add a button to call our ajax functions-->
+                <button  type="button" onclick='removeFromCart("{{name}}")'>Remove from Cart</button>
+            </div>
+        {{else}}
+            <div class="row">
+                <div><h3>Cart is Empty</h3></div>
+            </div>
+        {{/each}}
+        </div>
+    </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+            function makeAJAXRequest(method, url, data){
+                if(data){ // Make an AJAX call using the provided data & method
+                    console.log("Adding: "+ data.name);
+                    fetch(url, { 
+                        method: method,
+                        body: JSON.stringify(data),
+                        headers: { 'Content-Type': 'application/json'} 
+                    })
+                    .then(response => response.json())
+                    .then(json => {//responds with number of items in cart
+                        $(".total").text(`Total: ${json.data.total}`);
+                        $("#list").empty();//emptys old container
+                        var htmlStr =""; //creates a empty html string to add to list div
+                        //Populates HTML string. This prints each item to screen. 
+                        (json.data.cart).forEach(x=>{ 
+                            htmlStr += '<img src="/images/'+ x.image+'" alt="'+x.name+'">';
+                            htmlStr += '<h3>'+x.name+'</h3></div>';
+                            htmlStr += '<h4>$'+x.price+'</h4>';
+                            htmlStr += `<button  type="button" onclick='removeFromCart("${x.name}")'>Remove from Cart</button>`;
+                            htmlStr += '<hr>'
+                        });
+                            htmlStr += `<button  type="button" onclick='removeAllFromCart()'>Purchase</button>`;
+                        //sets the HTML inside "list" div
+                        $("#list").html(htmlStr);
+                    }).catch((err)=>{
+                        console.log("Error Fetching");
+                        alert(err.message);
+                    }); 
+                } else{  // Make an AJAX call without providing data using the method
+                    fetch(url, { method: method })
+                    .then(response => response.json())
+                    .then(json => {
+                        console.log(json);   
+                    }).catch((message)=>{
+                        alert(message);
+                    });
+                }
+            }
+            //makes ajax call to remove a certain item by name
+            function removeFromCart(data){
+                console.log("Calling add with: "+data);
+                makeAJAXRequest("POST", "/removeItem", {name: data});
+            }
+
+            function removeAllFromCart(){
+                console.log("Calling add with: ");
+                makeAJAXRequest("POST", "/removeAll");
+            }
+        </script> 
+        <style >
+           img {
+                width: 50px;
+                height: 50px;
+            }
+            .shcart{
+                text-align: center;
+            }
+            #list {
+                border: 1px solid black;
+                position: absolute;
+                left:40%;
+                width: 20%;
+            }
+            
+        </style>

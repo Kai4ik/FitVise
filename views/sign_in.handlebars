@@ -1,6 +1,6 @@
 <div class="reg_item">
     <h3 class="login_sign"> Create your account </h3>
-    <form method="POST">
+    <form method="POST" action="/sign_in">
         <label for="first">First name:</label><br>
         <input type="text" name="first" value="{{name_value}}"><br> <br>
         <label for="last">Last Name:</label><br>
@@ -10,7 +10,7 @@
         <p class="tip"> Format: example@gmail.com </p>
         <label for="pass">Password:</label><br>
         <input type="text" name="pass" value="{{password_value}}">
-        <p class="tip"> At least one numeric digit, 1 uppercase and lowercase letter </p>
+        <p class="tip"> At least one numeric digit, 1 uppercase and lowercase letter </p> 
         <input type="submit" class="submit" value="Register">
         <br>
         {{#each arr_error}}

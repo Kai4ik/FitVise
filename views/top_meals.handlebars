@@ -1,11 +1,45 @@
 <div class="grid-container">
     {{#each meals}}
   <div class="grid-item">
-      <h3 id="meal_name"> <strong> {{this.name}} </strong> </h3>
-      <p> <img src="/images/{{this.image}}" alt="Logo" width="100" height="100"></p>
-      <p><em> {{this.desc}} </em></p>
+      <h3 id="meal_name"> <strong> {{name}} </strong> </h3>
+      <p> <a href="/detailed_info" target="_self"><img src="/images/{{this.image}}" alt="Logo" width="100" height="100"></p></a>
       <p> Price: {{this.price}}</p>
-      <p> Category: {{this.category}}</p>
+      <p> Category: {{this.categ}}</p>
+      <button  type="button" class="btns" onclick='addToCart("{{name}}")'>Add to Cart</button>
+      <a href="/edit" target="_self"></a><input type="submit" class="btns" value="Edit Meal"></a>
   </div> 
   {{/each}}
 </div>
+
+
+<script>
+  function makeAJAXRequest(method, url, data){
+    if(data){
+      fetch(url, { 
+        method: method,
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json'} 
+      })
+      .then(resp => resp.json())
+      .then(json => {
+        $("span.glyphicon").text(`${json.data}`);
+      }).catch((err)=>{
+        console.log("Error Fetching");
+        alert(err.message);
+      }); 
+    } else{ 
+        fetch(url, { method: method })
+        .then(resp => resp.json())
+        .then(json => {
+           console.log(json);   
+        }).catch((err_mess)=>{
+            alert(err_mess);
+        });
+    }
+}
+  function addToCart(data){
+    console.log("Calling add with: "+data);
+    makeAJAXRequest("POST", "/addProduct", {name: data});
+ }
+</script>    
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

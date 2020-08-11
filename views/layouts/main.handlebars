@@ -20,6 +20,19 @@
                 <ul class="main-nav">
                     <li> <a href="/" target="_self"> Home </a></li>
                     <li> <a href="/top_meals" target="_self"> Meal Packages </a></li>
+                    {{#if user}}
+                        <div class="dropdown">
+                            <li> <a href="/" target="_self"> {{user.first}} {{user.last}} <img src="/images/arrow.png" class="arrow"></a></li>
+                            <div class="dropdown-content">
+                                {{#if user.role}}
+                                <a href="/add_meals" target="_self"> Add meal </a>
+                                {{else}}
+                                <a href="/cart" target="_self"> Your Cart </a>
+                                {{/if}}
+                                <a href="/logout" target="_self"> log out </a>
+                            </div>
+                        </div>
+                     {{/if}}
                 </ul>
             </div>
         </nav>

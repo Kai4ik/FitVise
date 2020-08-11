@@ -17,16 +17,113 @@ html {
 }
 
 /* --------------------------
+   ----- Adding meals  -----
+   -------------------------- */
+.add_form {
+    lefT:50%;
+    padding-top: 20%;
+    margin-top: 70px;
+    position: relative;
+    width: 280px;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
+.add_form h3 {
+    font-size: 20px;
+    padding-bottom: 6px;
+    padding-top: 50px;
+    margin-bottom: 10px;
+}
+
+.textbox {
+    width: 100%;
+    border-bottom: 1px solid black;
+    margin: 8px 0;
+    padding: 8px 0;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+.textbox input {
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+.btnm {
+    width: 100%;
+    background: none;
+    color: black;
+    border: 2px solid black;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+/* --------------------------
    ----- Navigation Bar -----
    -------------------------- */
 
-.main-nav {
+.arrow {
+    width: 20px;
+    height: 15px;
+    padding-left: 5px;
+    position: relative;
+}
+
+.dropbtn {
+    padding: 16px;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a  {
+    color: aliceblue;
+    padding: 12px 16px;
+    margin-left: 90px;
+    text-decoration: none;
+    display: block;
+    font-size: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: border-bottom 0.2s;
+  }
+  
+.dropdown-content a:hover {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e04a;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.main-nav, .main-nav .logo {
     float: right;
 }
 
 .main-nav li {
     display: inline-block;
     margin: 22px 20px;
+}
+
+.main-nav h5 {
+    color: whitesmoke;
 }
 
 .main-nav li a:link, .main-nav li a:visited  {
@@ -129,6 +226,9 @@ footer {
     font-size: 100%;
 }
 
+.adding_btn{
+    margin-top: 10px;
+}
 /* --------------------
    ----- Headings -----
    -------------------- */
@@ -212,6 +312,7 @@ h4 {
    ----- Registration buttons -----
    -------------------------------- */
 
+
 .btn:link, .btn:visited {
     font-size: 130%;
     font-weight: 800;
@@ -232,6 +333,7 @@ h4 {
     background-color: #f6f6cc;
     font-size: 150%;
 }
+
 
 .reg_item {
     text-align: center;

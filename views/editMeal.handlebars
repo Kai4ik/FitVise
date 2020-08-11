@@ -1,0 +1,27 @@
+
+    <form method="POST" action="/add_meals" enctype="multipart/form-data">
+        <div class="add_form">
+            <h3> Add Meal </h3>
+            <div class="textbox">
+                <input type="text" placeholder="name" name="name" value={{meal.name}}>
+            </div>
+            <div class="textbox">
+                <input type="text" placeholder="price" name="price" value={{meal.price}}>
+            </div>
+            <div class="textbox">
+                <input type="text" placeholder="description" name="desc">
+            </div>
+            <div class="textbox">
+                <input type="text" placeholder="category" name="categ">
+            </div>
+            <div class="textbox">
+                <input type="text" placeholder="number of meals" name="nof">
+            </div>
+            <label class="top"> Top meal?   </label>
+            <input type="checkbox" name="top" class="top">
+             <div class="textbox">
+                <input type="file" name="meal_image" >
+            </div>
+            <input type="submit" class="btnm" name="" value="Add meal">
+        </div>
+    </form>
