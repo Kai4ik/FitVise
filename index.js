@@ -4,6 +4,9 @@ Unfortunately, i was not able to implement shopping cart (actually I used your (
 But I am going to work on that. I had weird error while implementing website on heroku telling about not being able to install "bcrypt"
 dependency. 
 https://www.flaticon.com/ - website where icons were taken
+Data Cleck Credentials:
+email:"orozobekov@gmail.com",
+password: qwerty123456QWERTY
 */
 
 const express = require("express");
